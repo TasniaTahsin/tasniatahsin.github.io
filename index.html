@@ -23,8 +23,8 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
       background: var(--bg);
       color: var(--text-dark);
-      line-height: 1.7;
-      font-size: 1.3rem; /* main text size */
+      line-height: 1.6;
+      font-size: 3.9rem; /* ~3x bigger than previous 1.3rem on desktop */
     }
 
     a {
@@ -48,18 +48,18 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 1rem;
       border-bottom: 1px solid #e0d6cc;
+      font-size: 3rem;
     }
 
     .nav-left {
       font-weight: 700;
-      font-size: 1.3rem; /* same as main text */
+      font-size: 3.9rem;
     }
 
     .nav-links a {
       margin-left: 1.2rem;
-      font-size: 1.05rem;
+      font-size: 3.3rem;
     }
 
     /* HERO */
@@ -99,14 +99,14 @@
     }
 
     .hero-name {
-      font-size: 2.9rem;
+      font-size: 8rem;
       font-weight: 700;
       color: var(--accent);
       margin-bottom: 0.6rem;
     }
 
     .hero-sub {
-      font-size: 1.1rem;
+      font-size: 4rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 0.6rem;
@@ -117,14 +117,14 @@
     }
 
     .hero-body {
-      font-size: 1.3rem; /* match main text */
+      font-size: 3.9rem;
       max-width: 32rem;
       margin-bottom: 1rem;
     }
 
     .hero-link {
       margin-top: 0.4rem;
-      font-size: 1.05rem;
+      font-size: 3.3rem;
       font-weight: 500;
     }
 
@@ -140,7 +140,7 @@
     }
 
     h2.section-title {
-      font-size: 1.4rem;
+      font-size: 4.2rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
@@ -159,22 +159,22 @@
 
     .section-heading {
       font-weight: 600;
-      font-size: 1.3rem; /* same as body */
+      font-size: 3.9rem;
     }
 
     .muted {
-      font-size: 1.3rem; /* same as body */
+      font-size: 3.9rem;
       color: var(--muted);
     }
 
     p {
-      font-size: 1.3rem;
+      font-size: 3.9rem;
     }
 
     ul {
       margin-left: 1.1rem;
       margin-top: 0.4rem;
-      font-size: 1.3rem;
+      font-size: 3.9rem;
     }
 
     li {
@@ -183,12 +183,12 @@
 
     .pill-row {
       margin-top: 0.3rem;
-      font-size: 1.1rem;
+      font-size: 3.3rem;
     }
 
     .pill {
       display: inline-block;
-      padding: 0.18rem 0.7rem;
+      padding: 0.25rem 1.1rem;
       border-radius: 999px;
       border: 1px solid #d3cec7;
       margin-right: 0.35rem;
@@ -197,54 +197,98 @@
 
     .pub {
       margin-bottom: 0.7rem;
-      font-size: 1.3rem;
+      font-size: 3.9rem;
     }
 
     .contact-links a {
       display: inline-block;
       margin-right: 1rem;
-      font-size: 1.3rem;
+      font-size: 3.9rem;
     }
 
     footer {
       text-align: center;
-      font-size: 1.1rem;
+      font-size: 3.3rem;
       color: var(--muted);
       padding-bottom: 2rem;
     }
 
     @media (max-width: 860px) {
-      .hero {
-        grid-template-columns: minmax(0, 1fr);
+      /* on smaller screens, shrink fonts for usability */
+      body {
+        font-size: 1.6rem;
       }
-      .hero-image,
-      .hero-text {
-        padding: 0;
-      }
-      .hero {
-        min-height: auto;
-      }
+
       .nav {
         flex-direction: column;
         align-items: flex-start;
         gap: 0.5rem;
+        font-size: 1.4rem;
       }
-      .nav-links {
-        display: flex;
-        flex-wrap: wrap;
+
+      .nav-left {
+        font-size: 1.8rem;
       }
+
       .nav-links a {
         margin-left: 0;
         margin-right: 0.8rem;
+        font-size: 1.4rem;
       }
+
+      .hero-name {
+        font-size: 3rem;
+      }
+
+      .hero-sub {
+        font-size: 1.6rem;
+      }
+
+      .hero-body {
+        font-size: 1.6rem;
+      }
+
+      .hero-link {
+        font-size: 1.4rem;
+      }
+
+      h2.section-title {
+        font-size: 1.8rem;
+      }
+
+      .section-heading,
+      .muted,
+      p,
+      ul {
+        font-size: 1.6rem;
+      }
+
+      .pill-row {
+        font-size: 1.3rem;
+      }
+
+      .pill {
+        padding: 0.15rem 0.7rem;
+      }
+
       .content {
         padding-inline: 1.25rem;
       }
+
       .two-col {
         grid-template-columns: minmax(0, 1fr);
       }
+
+      .hero {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
       .hero-text {
         padding: 2rem 1.5rem;
+      }
+
+      footer {
+        font-size: 1.4rem;
       }
     }
   </style>
