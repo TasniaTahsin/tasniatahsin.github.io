@@ -5,71 +5,430 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Tasnia Tahsin – Portfolio</title>
   <style>
+    :root {
+      --bg: #0f172a;
+      --bg-alt: #020617;
+      --card: #020617;
+      --accent: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #9ca3af;
+      --border: #1f2937;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 2rem 1rem 4rem;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+        system-ui, sans-serif;
+      background: radial-gradient(circle at top, #1e293b 0, #020617 50%);
+      color: var(--text);
       line-height: 1.6;
     }
-    h1, h2 {
-      margin-bottom: 0.2rem;
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
     }
-    h1 { font-size: 2rem; }
-    .tagline { color: #555; margin-bottom: 1rem; }
-    a { color: #005cc5; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    .section { margin-top: 2rem; }
-    .project { margin-bottom: 0.7rem; }
+    a:hover {
+      text-decoration: underline;
+    }
+
+    .page {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 2.5rem 1.5rem 4rem;
+    }
+
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 2rem;
+    }
+
+    .name-block h1 {
+      font-size: 2.1rem;
+      margin: 0 0 0.2rem;
+    }
+
+    .tagline {
+      color: var(--muted);
+      font-size: 0.98rem;
+    }
+
+    .contact {
+      font-size: 0.9rem;
+      text-align: right;
+      color: var(--muted);
+    }
+    .contact div {
+      margin-bottom: 0.15rem;
+    }
+
+    main {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr);
+      gap: 2rem;
+    }
+
+    @media (max-width: 820px) {
+      main {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .contact {
+        text-align: left;
+      }
+    }
+
+    .section-title {
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 0.35rem;
+    }
+
+    .card {
+      background: rgba(15, 23, 42, 0.85);
+      border-radius: 0.75rem;
+      border: 1px solid var(--border);
+      padding: 1rem 1.1rem;
+      box-shadow: 0 18px 45px rgba(0, 0, 0, 0.35);
+      backdrop-filter: blur(10px);
+      margin-bottom: 1rem;
+    }
+
+    .card p {
+      margin: 0.2rem 0;
+      font-size: 0.9rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.08rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      font-size: 0.75rem;
+      color: var(--muted);
+      margin: 0.1rem 0.25rem 0.1rem 0;
+    }
+
+    .subheading {
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-bottom: 0.15rem;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .two-col-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr);
+      gap: 0.15rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    @media (min-width: 720px) {
+      .two-col-list {
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+    }
+
+    ul {
+      margin: 0.2rem 0 0.2rem 1.1rem;
+      padding: 0;
+      font-size: 0.9rem;
+    }
+
+    li {
+      margin-bottom: 0.12rem;
+    }
+
+    .edu-entry,
+    .exp-entry,
+    .proj-entry,
+    .pub-entry {
+      margin-bottom: 0.7rem;
+    }
+
+    .edu-heading,
+    .exp-heading,
+    .proj-heading {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.75rem;
+      font-size: 0.9rem;
+    }
+
+    .edu-title,
+    .exp-title,
+    .proj-title {
+      font-weight: 600;
+    }
+
+    .edu-meta,
+    .exp-meta,
+    .proj-meta {
+      font-size: 0.82rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    .footer-note {
+      margin-top: 2.5rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-align: center;
+    }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Tasnia Tahsin</h1>
-    <div class="tagline">
-      PhD Student in Electrical &amp; Computer Engineering · Auburn University
-    </div>
-    <div>
-      <a href="mailto:YOUR_EMAIL@auburn.edu">YOUR_EMAIL@auburn.edu</a> ·
-      <a href="https://github.com/TasniaTahsin">GitHub</a> ·
-      <a href="https://www.linkedin.com/in/YOUR-LINKEDIN">LinkedIn</a>
-    </div>
-  </header>
+  <div class="page">
+    <header>
+      <div class="name-block">
+        <h1>Tasnia Tahsin</h1>
+        <div class="tagline">
+          Doctoral student in Electrical and Computer Engineering · Auburn University
+        </div>
+      </div>
+      <div class="contact">
+        <div><a href="mailto:tzt0079@auburn.edu">tzt0079@auburn.edu</a></div>
+        <div>+1&nbsp;(334)&nbsp;524-8452</div>
+        <div>Auburn, AL, USA</div>
+        <!-- Add real links when ready -->
+        <!-- <div><a href="https://github.com/TasniaTahsin">GitHub</a> · <a href="https://www.linkedin.com/in/...">LinkedIn</a></div> -->
+      </div>
+    </header>
 
-  <section class="section">
-    <h2>About</h2>
-    <p>
-      Doctoral researcher focusing on MRI-based medical imaging,
-      machine learning, and data-driven quantitative analysis.
-    </p>
-  </section>
+    <main>
+      <!-- LEFT COLUMN -->
+      <section>
+        <!-- Profile -->
+        <div class="card">
+          <div class="section-title">Profile</div>
+          <p>
+            Doctoral researcher in Electrical &amp; Computer Engineering focused on MRI-based medical imaging.
+            My work spans hands-on MRI data acquisition with advanced image processing and data-driven
+            quantitative analysis.
+          </p>
+        </div>
 
-  <section class="section">
-    <h2>Projects</h2>
+        <!-- Skills -->
+        <div class="card">
+          <div class="section-title">Skills</div>
 
-    <div class="project">
-      <strong>AI for High-Accuracy Bacterial Detection, Segmentation, and Classification</strong>
-      <p>
-        End-to-end pipeline using YOLO for detection, U-Net for segmentation,
-        and ResNet-based classification of bacterial microscopy images.
-      </p>
+          <div class="subheading">Programming</div>
+          <p>Python, C++, MATLAB, FSL, CST Studio Suite, FreeSurfer, DSI Studio, MRTrix3, Wireshark</p>
+
+          <div class="subheading" style="margin-top:0.4rem;">ML / Data</div>
+          <p>PyTorch, TensorFlow, scikit-learn, pandas, NumPy</p>
+
+          <div class="subheading" style="margin-top:0.4rem;">Tools</div>
+          <p>Git, Linux, Xcode, LaTeX, Bash, Google Colab, Jupyter Notebook</p>
+
+          <div class="subheading" style="margin-top:0.4rem;">Other</div>
+          <p>Image reconstruction, medical image analysis, signal processing</p>
+        </div>
+
+        <!-- Research interests -->
+        <div class="card">
+          <div class="section-title">Research Interests</div>
+          <p>
+            Diffusion MRI and tensor imaging; image processing and quantitative analysis methods to better
+            understand brain microstructure and neurological disease.
+          </p>
+        </div>
+
+        <!-- Teaching & Certification -->
+        <div class="card">
+          <div class="section-title">Teaching</div>
+          <div class="subheading">Teaching Assistant</div>
+          <p class="muted">Auburn University · 2024–Present</p>
+          <p>Courses: Fundamentals of Electrical Circuits; Random Signals &amp; Systems</p>
+
+          <div class="section-title" style="margin-top:1.1rem;">Certification</div>
+          <p>
+            <span class="subheading">HeartCode BLS (Basic Life Support)</span><br />
+            American Heart Association · Issued Feb 2025
+          </p>
+        </div>
+      </section>
+
+      <!-- RIGHT COLUMN -->
+      <section>
+        <!-- Education -->
+        <div class="card">
+          <div class="section-title">Education</div>
+
+          <div class="edu-entry">
+            <div class="edu-heading">
+              <div class="edu-title">Auburn University, Auburn, USA</div>
+              <div class="edu-meta">Fall 2024 – Present</div>
+            </div>
+            <p class="muted">PhD in Electrical and Computer Engineering</p>
+          </div>
+
+          <div class="edu-entry">
+            <div class="edu-heading">
+              <div class="edu-title">
+                Rajshahi University of Engineering and Technology, Rajshahi, Bangladesh
+              </div>
+              <div class="edu-meta">2017 – 2022</div>
+            </div>
+            <p class="muted">
+              BSc in Electrical and Electronic Engineering · GPA 3.10 / 4.00
+            </p>
+          </div>
+        </div>
+
+        <!-- Research Experience -->
+        <div class="card">
+          <div class="section-title">Research Experience</div>
+
+          <div class="exp-entry">
+            <div class="exp-heading">
+              <div class="exp-title">
+                Graduate Researcher · MRI Research Center, Auburn, USA
+              </div>
+              <div class="exp-meta">2024 – Present</div>
+            </div>
+            <p class="muted">Dept. of Electrical and Computer Engineering</p>
+            <ul>
+              <li>Acquire diffusion and structural MRI data directly on the scanner.</li>
+              <li>Perform diffusion tensor imaging (DTI) processing to study brain microstructure.</li>
+              <li>
+                Apply brain image-processing pipelines for preprocessing, registration, and quality control.
+              </li>
+            </ul>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-heading">
+              <div class="exp-title">
+                Undergraduate Researcher · Compact mm-Wave Microstrip Array Antenna with DGS
+              </div>
+              <div class="exp-meta">RUET · 2021 – 2022</div>
+            </div>
+            <ul>
+              <li>
+                Designed a microstrip patch antenna array operating at 28&nbsp;GHz for 5G applications,
+                achieving low power loss and high gain in a compact form factor.
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Projects -->
+        <div class="card">
+          <div class="section-title">Selected Projects</div>
+
+          <div class="proj-entry">
+            <div class="proj-heading">
+              <div class="proj-title">
+                AI for High-Accuracy Bacterial Detection, Segmentation, and Classification
+              </div>
+            </div>
+            <p class="muted">
+              Built a machine-learning pipeline that detects bacteria in microscopy images,
+              segments their shapes, and classifies their types for automated analysis.
+            </p>
+          </div>
+
+          <div class="proj-entry">
+            <div class="proj-heading">
+              <div class="proj-title">
+                Design and Analysis of Microstrip Patch Antenna for Wearable Devices
+              </div>
+            </div>
+            <p class="muted">
+              Designed and simulated a ground-slotted rectangular microstrip patch antenna for wearable
+              devices at 3.5&nbsp;GHz, comparing flexible substrates in CST and identifying PDMS as the
+              best trade-off in gain, return loss, and flexibility.
+            </p>
+          </div>
+
+          <div class="proj-entry">
+            <div class="proj-heading">
+              <div class="proj-title">
+                Data-Driven ADHD Diagnosis: Comparative Analysis Using PSD and SVM
+              </div>
+            </div>
+            <p class="muted">
+              Developed a PSD-based fMRI feature pipeline with SVM classification, showing that
+              carefully selected compact feature sets can outperform larger feature spaces.
+            </p>
+          </div>
+        </div>
+
+        <!-- Publications -->
+        <div class="card">
+          <div class="section-title">Publications</div>
+
+          <div class="pub-entry">
+            <p>
+              <strong>A Comprehensive Comparison Between Boost and Buck-Boost Converters in Solar MPPT with ANN</strong><br />
+              Conference paper, 2020 · Publisher: IEEE.
+              <!-- Add DOI/URL if you have one -->
+            </p>
+          </div>
+
+          <div class="pub-entry">
+            <p>
+              <strong>Voice-activated Open-loop Control of Wireless Home Automation System for Multifunctional Devices</strong><br />
+              Conference paper, 2019 · Publisher: IEEE.
+            </p>
+          </div>
+        </div>
+
+        <!-- Internships -->
+        <div class="card">
+          <div class="section-title">Internship Experience</div>
+
+          <div class="exp-entry">
+            <div class="exp-heading">
+              <div class="exp-title">
+                Intern · Bangladesh Telecommunication Company Limited (BTCL), Bangladesh
+              </div>
+              <div class="exp-meta">Mar 2022 – Apr 2022</div>
+            </div>
+            <ul>
+              <li>
+                Gained practical insight into large-scale telecom systems, network control, and operational
+                workflows.
+              </li>
+            </ul>
+          </div>
+
+          <div class="exp-entry">
+            <div class="exp-heading">
+              <div class="exp-title">Intern · Gao Tek Inc. (Remote), USA</div>
+              <div class="exp-meta">May 2021 – Aug 2021</div>
+            </div>
+            <ul>
+              <li>Industry-oriented remote internship experience (details can be expanded as desired).</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="footer-note">
+      © <span id="year"></span> Tasnia Tahsin · Hosted on GitHub Pages
     </div>
+  </div>
 
-    <div class="project">
-      <strong>Flexible Wearable Microstrip Patch Antenna</strong>
-      <p>
-        CST-based design and simulation of a ground-slotted patch antenna at 3.5–3.8 GHz
-        on flexible substrates for health monitoring applications.
-      </p>
-    </div>
-
-    <div class="project">
-      <strong>Data-Driven ADHD Diagnosis</strong>
-      <p>
-        PSD-based fMRI feature extraction with SVM classification to explore ADHD diagnosis
-        using compact, carefully selected feature sets.
-      </p>
-    </div>
-  </section>
+  <script>
+    // Set current year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
