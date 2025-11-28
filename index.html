@@ -73,22 +73,22 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-      min-height: auto; /* let the image drive height */
+      min-height: auto; /* image drives height */
     }
 
     .hero-image {
       background: #ffffff;
       display: flex;
-      align-items: stretch;  /* let image take full height */
+      align-items: stretch;
       justify-content: center;
-      padding: 0;            /* remove large white padding */
+      padding: 0;
     }
 
     .hero-image img {
       width: 100%;
       height: 100%;
-      object-fit: cover;     /* crop to fill */
-      border-radius: 0;      /* flush with the white block; change if you want rounding */
+      object-fit: cover;
+      border-radius: 0;
     }
 
     .hero-text {
@@ -256,6 +256,7 @@
       <a href="#about">About</a>
       <a href="#research">Research</a>
       <a href="#projects">Projects</a>
+      <a href="#teaching">Teaching</a>
       <a href="#publications">Publications</a>
       <a href="#contact">Contact</a>
     </nav>
@@ -309,7 +310,7 @@
             <div class="muted">Fall 2024 – Present</div>
             <br />
             <div class="muted">BSc, Electrical &amp; Electronic Engineering · RUET, Bangladesh</div>
-            <div class="muted">2017 – 2022 · GPA 3.10 / 4.00</div>
+            <div class="muted">2017 – 2022</div>
           </div>
 
           <div class="section-block">
@@ -348,7 +349,7 @@
             <ul>
               <li>Acquire diffusion and structural MRI data directly on the scanner.</li>
               <li>Perform diffusion tensor imaging (DTI) processing to study brain microstructure.</li>
-              <li>Apply brain image-processing pipelines for preprocessing, registration, and QC.</li>
+              <li>Apply brain image-processing pipelines for preprocessing, registration, and quality control.</li>
             </ul>
           </div>
         </div>
@@ -360,15 +361,6 @@
               <li>Medical image reconstruction and quantitative analysis</li>
               <li>Machine learning for biological and medical imaging</li>
               <li>Biomedical signal and image processing</li>
-            </ul>
-          </div>
-
-          <div class="section-block">
-            <div class="section-heading">Teaching</div>
-            <div class="muted">Teaching Assistant · Auburn University · 2024 – Present</div>
-            <ul>
-              <li>Fundamentals of Electrical Circuits</li>
-              <li>Random Signals and Systems</li>
             </ul>
           </div>
         </div>
@@ -417,26 +409,48 @@
       </div>
     </section>
 
-    <!-- Publications -->
-    <section id="publications">
-      <h2 class="section-title">Publications</h2>
+    <!-- Teaching -->
+    <section id="teaching">
+      <h2 class="section-title">Teaching</h2>
 
-      <div class="pub">
-        <strong>A Comprehensive Comparison Between Boost and Buck-Boost Converters in Solar MPPT with ANN</strong><br />
-        Conference Paper, 2020 · IEEE.<br />
-        <span class="muted">
-          Explores ANN-based maximum power point tracking using different DC-DC converter topologies.
-        </span>
-      </div>
-
-      <div class="pub">
-        <strong>Voice-activated Open-loop Control of Wireless Home Automation System for Multifunctional Devices</strong><br />
-        Conference Paper, 2019 · IEEE.<br />
-        <span class="muted">
-          Presents a voice-controlled wireless home automation system for multi-device control.
-        </span>
+      <div class="section-block">
+        <div class="section-heading">Teaching Assistant · Auburn University</div>
+        <div class="muted">2024 – Present</div>
+        <ul>
+          <li>Fundamentals of Electrical Circuits</li>
+          <li>Random Signals and Systems</li>
+        </ul>
       </div>
     </section>
+
+    <!-- Publications -->
+   <section id="publications">
+  <h2 class="section-title">Publications</h2>
+
+  <div class="pub">
+    <strong>
+      <a href="https://ieeexplore.ieee.org/document/9350867" target="_blank" rel="noopener">
+        A Comprehensive Comparison Between Boost and Buck-Boost Converters in Solar MPPT with ANN
+      </a>
+    </strong><br />
+    Conference Paper, 2020 · IEEE.<br />
+    <span class="muted">
+      Explores ANN-based maximum power point tracking using different DC-DC converter topologies.
+    </span>
+  </div>
+
+  <div class="pub">
+    <strong>
+      <a href="https://ieeexplore.ieee.org/document/9019996" target="_blank" rel="noopener">
+        Voice-activated Open-loop Control of Wireless Home Automation System for Multifunctional Devices
+      </a>
+    </strong><br />
+    Conference Paper, 2019 · IEEE.<br />
+    <span class="muted">
+      Presents a voice-controlled wireless home automation system for multi-device control.
+    </span>
+  </div>
+</section>
 
     <!-- Contact -->
     <section id="contact">
@@ -447,8 +461,7 @@
       </p>
       <div class="contact-links">
         <a href="mailto:tzt0079@auburn.edu">Email</a>
-        <a href="https://github.com/TasniaTahsin" target="_blank" rel="noopener">GitHub</a>
-        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/tasnia-tahsin-415445141/" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </section>
   </main>
