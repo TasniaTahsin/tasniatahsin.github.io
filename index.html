@@ -201,11 +201,16 @@
       font-size: 1.5rem;
     }
 
+    .contact-section {
+      text-align: center;
+    }
+
     .contact-links {
       display: flex;
       align-items: center;
-      gap: 1rem;
-      margin-top: 0.5rem;
+      justify-content: center;
+      gap: 1.5rem;
+      margin-top: 0.8rem;
     }
 
     .contact-links span {
@@ -303,13 +308,18 @@
         grid-template-columns: minmax(0, 1fr);
       }
 
-      footer {
-        font-size: 1rem;
+      .contact-links {
+        flex-direction: column;
+        gap: 0.6rem;
       }
 
       .linkedin-icon svg {
         width: 1.4rem;
         height: 1.4rem;
+      }
+
+      footer {
+        font-size: 1rem;
       }
     }
   </style>
@@ -514,6 +524,21 @@
       </div>
     </section>
 
+    <!-- Certification -->
+    <section id="certification">
+      <h2 class="section-title">Certification</h2>
+
+      <div class="section-block">
+        <div class="section-heading">HeartCode BLS (Basic Life Support)</div>
+        <div class="muted">American Heart Association · Issued Feb 2025</div>
+      </div>
+
+      <div class="section-block">
+        <div class="section-heading">MRI Level 2 Certification</div>
+        <div class="muted">Advanced MRI safety training for working in the MRI environment.</div>
+      </div>
+    </section>
+
     <!-- Publications -->
     <section id="publications">
       <h2 class="section-title">Publications</h2>
@@ -544,7 +569,7 @@
     </section>
 
     <!-- Contact -->
-    <section id="contact">
+    <section id="contact" class="contact-section">
       <h2 class="section-title">Contact</h2>
       <p>
         I am open to conversations about internships, research collaborations, and
@@ -553,7 +578,7 @@
       <div class="contact-links">
         <span>tzt0079(at)auburn(dot)edu</span>
         <a
-          href="https://www.linkedin.com/in/YOUR-LINKEDIN"
+          href="https://www.linkedin.com/in/tasnia-tahsin-415445141/"
           target="_blank"
           rel="noopener"
           class="linkedin-icon"
