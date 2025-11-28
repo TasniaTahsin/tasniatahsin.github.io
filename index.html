@@ -73,23 +73,22 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-      min-height: 380px;
+      min-height: auto; /* let the image drive height */
     }
 
     .hero-image {
       background: #ffffff;
       display: flex;
-      align-items: center;
+      align-items: stretch;  /* let image take full height */
       justify-content: center;
-      padding: 3rem 2rem;
+      padding: 0;            /* remove large white padding */
     }
 
     .hero-image img {
-      max-width: 280px;
       width: 100%;
-      height: auto;
-      object-fit: cover;
-      border-radius: 4px;
+      height: 100%;
+      object-fit: cover;     /* crop to fill */
+      border-radius: 0;      /* flush with the white block; change if you want rounding */
     }
 
     .hero-text {
@@ -214,14 +213,12 @@
       .hero {
         grid-template-columns: minmax(0, 1fr);
       }
-      .hero-image, .hero-text {
-        padding: 2rem 1.5rem;
+      .hero-image,
+      .hero-text {
+        padding: 0;
       }
       .hero {
         min-height: auto;
-      }
-      .two-col {
-        grid-template-columns: minmax(0, 1fr);
       }
       .nav {
         flex-direction: column;
@@ -235,6 +232,15 @@
       .nav-links a {
         margin-left: 0;
         margin-right: 0.8rem;
+      }
+      .content {
+        padding-inline: 1.25rem;
+      }
+      .two-col {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      .hero-text {
+        padding: 2rem 1.5rem;
       }
     }
   </style>
@@ -259,7 +265,7 @@
   <div class="hero-wrapper">
     <div class="hero">
       <div class="hero-image">
-        <!-- Upload profile.jpg to the repo -->
+        <!-- Make sure profile.jpg is in the repo root -->
         <img src="profile.jpg" alt="Photo of Tasnia Tahsin" />
       </div>
       <div class="hero-text">
@@ -303,7 +309,7 @@
             <div class="muted">Fall 2024 – Present</div>
             <br />
             <div class="muted">BSc, Electrical &amp; Electronic Engineering · RUET, Bangladesh</div>
-            <div class="muted">2017 – 2022</div>
+            <div class="muted">2017 – 2022 · GPA 3.10 / 4.00</div>
           </div>
 
           <div class="section-block">
@@ -440,7 +446,7 @@
         interdisciplinary projects in medical imaging and applied machine learning.
       </p>
       <div class="contact-links">
-        <a href="mailto:YOUR_EMAIL@auburn.edu">Email</a>
+        <a href="mailto:tzt0079@auburn.edu">Email</a>
         <a href="https://github.com/TasniaTahsin" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
       </div>
