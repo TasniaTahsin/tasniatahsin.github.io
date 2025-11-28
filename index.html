@@ -117,7 +117,7 @@
     }
 
     .hero-body {
-      font-size: 1.5rem; /* match main text */
+      font-size: 1.2rem; /* smaller than rest of body text */
       max-width: 32rem;
       margin-bottom: 1rem;
     }
@@ -201,10 +201,26 @@
       font-size: 1.5rem;
     }
 
-    .contact-links a {
-      display: inline-block;
-      margin-right: 1rem;
+    .contact-links {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      margin-top: 0.5rem;
+    }
+
+    .contact-links span {
       font-size: 1.5rem;
+    }
+
+    .contact-links a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .linkedin-icon svg {
+      width: 1.8rem;
+      height: 1.8rem;
     }
 
     footer {
@@ -253,7 +269,7 @@
       }
 
       .hero-body {
-        font-size: 1.1rem;
+        font-size: 1rem;
       }
 
       .hero-link {
@@ -289,6 +305,11 @@
 
       footer {
         font-size: 1rem;
+      }
+
+      .linkedin-icon svg {
+        width: 1.4rem;
+        height: 1.4rem;
       }
     }
   </style>
@@ -527,11 +548,26 @@
       <h2 class="section-title">Contact</h2>
       <p>
         I am open to conversations about internships, research collaborations, and
-        interdisciplinary projects in medical imaging and applied machine learning.
+        interdisciplinary projects in medical imaging and related areas.
       </p>
       <div class="contact-links">
-        <a href="mailto:tzt0079@auburn.edu">Email</a>
-        <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
+        <span>tzt0079(at)auburn(dot)edu</span>
+        <a
+          href="https://www.linkedin.com/in/YOUR-LINKEDIN"
+          target="_blank"
+          rel="noopener"
+          class="linkedin-icon"
+          aria-label="LinkedIn profile"
+        >
+          <!-- Simple LinkedIn-style icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true">
+            <rect x="2" y="2" width="20" height="20" rx="3" fill="#0A66C2" />
+            <path
+              d="M8.11 9.17H6.03V18h2.08V9.17zM7.07 5.5A1.2 1.2 0 1 0 7.08 7.9 1.2 1.2 0 0 0 7.07 5.5zM18 18h-2.07v-4.66c0-1.11-.4-1.86-1.4-1.86-.77 0-1.23.52-1.43 1.03-.07.17-.09.41-.09.65V18H11v-8.83h1.96v1.2c.26-.4.92-1.2 2.24-1.2 1.64 0 2.8 1.07 2.8 3.37V18z"
+              fill="#ffffff"
+            />
+          </svg>
+        </a>
       </div>
     </section>
   </main>
