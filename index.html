@@ -23,7 +23,8 @@
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
       background: var(--bg);
       color: var(--text-dark);
-      line-height: 1.6;
+      line-height: 1.7;
+      font-size: 17px; /* bigger base font */
     }
 
     a {
@@ -35,31 +36,30 @@
       text-decoration: underline;
     }
 
-    /* NAVBAR */
+    /* NAVBAR (sticky) */
     .nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: var(--bg);
       max-width: 1100px;
       margin: 0 auto;
       padding: 1rem 1.5rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-size: 0.95rem;
+      font-size: 1rem;
+      border-bottom: 1px solid #e0d6cc;
     }
 
     .nav-left {
-      font-weight: 600;
-    }
-
-    .nav-left span {
-      display: block;
-      font-size: 0.8rem;
-      color: var(--muted);
-      font-weight: 400;
+      font-weight: 700;
+      font-size: 1.3rem;
     }
 
     .nav-links a {
       margin-left: 1.2rem;
-      font-size: 0.9rem;
+      font-size: 0.98rem;
     }
 
     /* HERO */
@@ -73,7 +73,7 @@
       margin: 0 auto;
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(0, 1.2fr);
-      min-height: auto; /* image drives height */
+      min-height: auto;
     }
 
     .hero-image {
@@ -99,14 +99,14 @@
     }
 
     .hero-name {
-      font-size: 2.4rem;
+      font-size: 2.7rem;
       font-weight: 700;
       color: var(--accent);
       margin-bottom: 0.6rem;
     }
 
     .hero-sub {
-      font-size: 0.95rem;
+      font-size: 1rem;
       letter-spacing: 0.08em;
       text-transform: uppercase;
       margin-bottom: 0.6rem;
@@ -117,14 +117,14 @@
     }
 
     .hero-body {
-      font-size: 0.95rem;
+      font-size: 1rem;
       max-width: 32rem;
       margin-bottom: 1rem;
     }
 
     .hero-link {
       margin-top: 0.4rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       font-weight: 500;
     }
 
@@ -136,15 +136,15 @@
     }
 
     section {
-      margin-bottom: 2.5rem;
+      margin-bottom: 2.8rem;
     }
 
     h2.section-title {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       letter-spacing: 0.12em;
       text-transform: uppercase;
       color: var(--accent);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.9rem;
     }
 
     .two-col {
@@ -159,18 +159,18 @@
 
     .section-heading {
       font-weight: 600;
-      font-size: 0.98rem;
+      font-size: 1rem;
     }
 
     .muted {
-      font-size: 0.9rem;
+      font-size: 0.95rem;
       color: var(--muted);
     }
 
     ul {
       margin-left: 1.1rem;
       margin-top: 0.4rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
     li {
@@ -179,32 +179,32 @@
 
     .pill-row {
       margin-top: 0.3rem;
-      font-size: 0.86rem;
+      font-size: 0.9rem;
     }
 
     .pill {
       display: inline-block;
-      padding: 0.08rem 0.55rem;
+      padding: 0.12rem 0.6rem;
       border-radius: 999px;
       border: 1px solid #d3cec7;
       margin-right: 0.35rem;
-      margin-bottom: 0.2rem;
+      margin-bottom: 0.25rem;
     }
 
     .pub {
       margin-bottom: 0.7rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
     .contact-links a {
       display: inline-block;
       margin-right: 1rem;
-      font-size: 0.9rem;
+      font-size: 0.95rem;
     }
 
     footer {
       text-align: center;
-      font-size: 0.8rem;
+      font-size: 0.85rem;
       color: var(--muted);
       padding-bottom: 2rem;
     }
@@ -246,16 +246,16 @@
   </style>
 </head>
 <body>
-  <!-- NAVBAR -->
+  <!-- NAVBAR (sticky) -->
   <header class="nav">
     <div class="nav-left">
       Tasnia Tahsin
-      <span>Electrical &amp; Computer Engineering · Auburn University</span>
     </div>
     <nav class="nav-links">
       <a href="#about">About</a>
       <a href="#education">Education</a>
       <a href="#research">Research</a>
+      <a href="#skills">Skills</a>
       <a href="#teaching">Teaching</a>
       <a href="#projects">Projects</a>
       <a href="#coursework">Graduate Coursework</a>
@@ -291,44 +291,17 @@
     <!-- About -->
     <section id="about">
       <h2 class="section-title">About</h2>
-      <div class="two-col">
-        <div>
-          <p>
-            I am a doctoral researcher at Auburn University working at the intersection of
-            MRI physics, image reconstruction, and data-driven analysis. I am especially
-            interested in diffusion MRI and tensor imaging to better understand brain
-            microstructure and neurological disorders.
-          </p>
-          <p>
-            Beyond MRI, I have prior work in antenna design and machine-learning pipelines
-            for medical and biological imaging, giving me a broad perspective from hardware
-            to algorithms.
-          </p>
-        </div>
-        <div>
-          <div class="section-block">
-            <div class="section-heading">Skills</div>
-            <div class="pill-row">
-              <span class="pill">Python</span>
-              <span class="pill">C++</span>
-              <span class="pill">MATLAB</span>
-              <span class="pill">PyTorch</span>
-              <span class="pill">TensorFlow</span>
-              <span class="pill">scikit-learn</span>
-              <span class="pill">FSL</span>
-              <span class="pill">FreeSurfer</span>
-              <span class="pill">DSI Studio</span>
-              <span class="pill">MRtrix3</span>
-              <span class="pill">CST Studio Suite</span>
-              <span class="pill">Git</span>
-              <span class="pill">Linux</span>
-              <span class="pill">LaTeX</span>
-              <span class="pill">Google Colab</span>
-              <span class="pill">Jupyter Notebook</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <p>
+        I am a doctoral researcher at Auburn University working at the intersection of
+        MRI physics, image reconstruction, and data-driven analysis. I am especially
+        interested in diffusion MRI and tensor imaging to better understand brain
+        microstructure and neurological disorders.
+      </p>
+      <p>
+        Beyond MRI, I have prior work in antenna design and machine-learning pipelines
+        for medical and biological imaging, giving me a broad perspective from hardware
+        to algorithms.
+      </p>
     </section>
 
     <!-- Education -->
@@ -373,6 +346,31 @@
               <li>Biomedical signal and image processing</li>
             </ul>
           </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Skills (moved out of About) -->
+    <section id="skills">
+      <h2 class="section-title">Skills</h2>
+      <div class="section-block">
+        <div class="pill-row">
+          <span class="pill">Python</span>
+          <span class="pill">C++</span>
+          <span class="pill">MATLAB</span>
+          <span class="pill">PyTorch</span>
+          <span class="pill">TensorFlow</span>
+          <span class="pill">scikit-learn</span>
+          <span class="pill">FSL</span>
+          <span class="pill">FreeSurfer</span>
+          <span class="pill">DSI Studio</span>
+          <span class="pill">MRtrix3</span>
+          <span class="pill">CST Studio Suite</span>
+          <span class="pill">Git</span>
+          <span class="pill">Linux</span>
+          <span class="pill">LaTeX</span>
+          <span class="pill">Google Colab</span>
+          <span class="pill">Jupyter Notebook</span>
         </div>
       </div>
     </section>
@@ -485,7 +483,6 @@
       </p>
       <div class="contact-links">
         <a href="mailto:tzt0079@auburn.edu">Email</a>
-        <a href="https://github.com/TasniaTahsin" target="_blank" rel="noopener">GitHub</a>
         <a href="https://www.linkedin.com/in/YOUR-LINKEDIN" target="_blank" rel="noopener">LinkedIn</a>
       </div>
     </section>
