@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Academic portfolio of Tasnia Tahsin, PhD student in Electrical and Computer Engineering at Auburn University.">
+  <title>Tasnia Tahsin | PhD Researcher</title>
+
+  <style>
+    :root {
+      --bg: #f4eee7;
+      --deep: #10352f;
+      --accent: #c9653b;
+      --text-dark: #222222;
+      --muted: #666666;
+      --border: #e0d6cc;
+      --white: #ffffff;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
+                   system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text-dark);
+      line-height: 1.7;
+      font-size: 1.15rem;
+    }
+
+    a {
+      color: var(--deep);
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    /* NAVIGATION */
+
+    .nav-wrapper {
+      background: var(--bg);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 2rem;
+    }
+
+    .nav-left {
+      font-weight: 700;
+      font-size: 1.6rem;
+      white-space: nowrap;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.4rem;
+    }
+
+    .nav-links a {
+      font-size: 1rem;
+      font-weight: 500;
+      white-space: nowrap;
+      cursor: pointer;
+      transition: color 0.2s ease;
+    }
+
+    .nav-links a.active {
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    /* PAGE SYSTEM */
+
+    .page {
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .page.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(8px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* HERO */
+
+    .hero-wrapper {
+      background: var(--deep);
+      color: var(--white);
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1.2fr;
+      min-height: 480px;
+    }
+
+    .hero-image {
+      display: flex;
+      align-items: stretch;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-text {
+      padding: 3rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .hero-sub {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 0.7rem;
+    }
+
+    .hero-sub span {
+      color: #e5e7eb;
+    }
+
+    .hero-name {
+      font-size: 3rem;
+      font-weight: 700;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      line-height: 1.2;
+    }
+
+    .hero-body {
+      font-size: 1.2rem;
+      max-width: 35rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .hero-link a {
+      color: var(--white);
+      font-weight: 600;
+      border-bottom: 1px solid var(--accent);
+      padding-bottom: 0.3rem;
+    }
+
+    /* CONTENT */
+
+    .content {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3.5rem 2rem 5rem;
+      min-height: 65vh;
+    }
+
+    .section-title {
+      font-size: 2rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 1.5rem;
+    }
+
+    .section-block {
+      margin-bottom: 2rem;
+    }
+
+    .section-heading {
+      font-weight: 650;
+      font-size: 1.35rem;
+      color: var(--deep);
+      margin-bottom: 0.3rem;
+    }
+
+    .muted {
+      color: var(--muted);
+      font-size: 1rem;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    ul {
+      margin-left: 1.5rem;
+      margin-top: 0.5rem;
+    }
+
+    li {
+      margin-bottom: 0.5rem;
+    }
+
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    /* SKILLS */
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.7rem;
+      margin-top: 1rem;
+    }
+
+    .pill {
+      display: inline-block;
+      padding: 0.35rem 0.9rem;
+      border-radius: 999px;
+      border: 1px solid #d3cec7;
+      background: rgba(255,255,255,0.45);
+      font-size: 1rem;
+    }
+
+    /* PUBLICATIONS */
+
+    .pub {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .pub-title {
+      font-weight: 650;
+      font-size: 1.2rem;
+      display: inline-block;
+      margin-bottom: 0.4rem;
+    }
+
+    /* CONTACT */
+
+    .contact-section {
+      text-align: center;
+    }
+
+    .contact-links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem;
+      margin-top: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-size: 1.1rem;
+    }
+
+    .linkedin-icon svg {
+      width: 1.6rem;
+      height: 1.6rem;
+    }
+
+    /* FOOTER */
+
+    footer {
+      text-align: center;
+      font-size: 0.95rem;
+      color: var(--muted);
+      padding: 2rem;
+      border-top: 1px solid var(--border);
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 1100px) {
+
+      .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+      }
+
+      .nav-links {
+        gap: 1rem;
+      }
+
+    }
+
+    @media (max-width: 768px) {
+
+      body {
+        font-size: 1rem;
+      }
+
+      .nav {
+        padding: 1rem;
+      }
+
+      .nav-left {
+        font-size: 1.3rem;
+      }
+
+      .nav-links {
+        gap: 0.8rem;
+      }
+
+      .nav-links a {
+        font-size: 0.9rem;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-image {
+        max-height: 400px;
+      }
+
+      .hero-text {
+        padding: 2rem 1.5rem;
+      }
+
+      .hero-name {
+        font-size: 2.3rem;
+      }
+
+      .hero-body {
+        font-size: 1rem;
+      }
+
+      .content {
+        padding: 2rem 1.25rem;
+      }
+
+      .section-title {
+        font-size: 1.5rem;
+      }
+
+      .section-heading {
+        font-size: 1.2rem;
+      }
+
+      .two-col {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .contact-links {
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+
+  <header class="nav-wrapper">
+
+    <div class="nav">
+
+      <div class="nav-left" onclick="showPage('home')">
+        Tasnia Tahsin
+      </div>
+
+      <nav class="nav-links" aria-label="Main navigation">
+
+        <a href="#home" data-page="home">About</a>
+
+        <a href="#education" data-page="education">Education</a>
+
+        <a href="#research" data-page="research">Research</a>
+
+        <a href="#skills" data-page="skills">Skills</a>
+
+        <a href="#teaching" data-page="teaching">Teaching</a>
+
+        <a href="#projects" data-page="projects">Projects</a>
+
+        <a href="#coursework" data-page="coursework">
+          Graduate Coursework
+        </a>
+
+        <a href="#certification" data-page="certification">
+          Certification
+        </a>
+
+        <a href="#publications" data-page="publications">
+          Publications
+        </a>
+
+        <a href="#contact" data-page="contact">Contact</a>
+
+      </nav>
+
+    </div>
+
+  </header>
+
+
+  <!-- HOME PAGE -->
+
+  <div id="home" class="page active">
+
+    <div class="hero-wrapper">
+
+      <div class="hero">
+
+        <div class="hero-image">
+
+          <img
+            src="profile.jpg"
+            alt="Photo of Tasnia Tahsin"
+          >
+
+        </div>
+
+        <div class="hero-text">
+
+          <div class="hero-sub">
+            Doctoral Researcher ·
+            <span>Auburn University</span>
+          </div>
+
+          <div class="hero-name">
+            Tasnia Tahsin
+          </div>
+
+          <div class="hero-body">
+
+            I am a PhD student in Electrical &amp; Computer
+            Engineering focused on MRI-based medical imaging.
+
+            My work combines hands-on MRI data acquisition
+            with advanced image processing for quantitative
+            analysis.
+
+          </div>
+
+          <div class="hero-link">
+
+            <a href="#research">
+              Explore my research →
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <main class="content">
+
+      <h2 class="section-title">About Me</h2>
+
+      <p>
+
+        I am a doctoral researcher at Auburn University
+        working at the intersection of MRI physics,
+        image reconstruction, and data-driven analysis.
+
+        I am especially interested in diffusion MRI
+        and tensor imaging to better understand brain
+        microstructure and neurological disorders.
+
+      </p>
+
+      <p>
+
+        Beyond MRI, I have prior work in antenna design
+        and machine-learning pipelines for medical and
+        biological imaging.
+
+        These experiences give me a broad perspective
+        from hardware to algorithms.
+
+      </p>
+
+    </main>
+
+  </div>
+
+
+  <!-- EDUCATION PAGE -->
+
+  <div id="education" class="page">
+
+    <main class="content">
+
+      <h2 class="section-title">Education</h2>
+
+      <div class="section-block">
+
+        <div class="section-heading">
+          PhD in Electrical &amp; Computer Engineering
+        </div>
+
+        <div class="muted">
+          Auburn University, Alabama, USA
+        </div>
+
+        <div class="muted">
+          2024 – Present
+        </div>
+
+      </div>
+
+
+      <div class="section-block">
+
+        <div class="section-heading">
+          BSc in Electrical &amp; Electronic Engineering
+        </div>
+
+        <div class="muted">
+          Rajshahi University of Engineering &amp; Technology
+          (RUET), Bangladesh
+        </div>
+
+        <div class="muted">
+          2017 – 2022
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- RESEARCH PAGE -->
+
+  <div id="research" class="page">
+
+    <main class="content">
+
+      <h2 class="section-title">Research</h2>
+
+      <div class="two-col">
+
+        <div>
+
+          <div class="section-block">
+
+            <div class="section-heading">
+              MRI Research Center
+            </div>
+
+            <div class="muted">
+              Auburn University
+            </div>
+
+            <div class="muted">
+              Graduate Researcher · 2024 – Present
+            </div>
+
+            <ul>
+
+              <li>
+                Acquire diffusion and structural MRI data
+                directly on the scanner.
+              </li>
+
+              <li>
+                Perform diffusion tensor imaging (DTI)
+                processing to study brain microstructure.
+              </li>
+
+              <li>
+                Apply brain image-processing pipelines
+                for preprocessing, registration,
+                and quality control.
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+
+        <div>
+
+          <div class="section-block">
+
+            <div class="section-heading">
+              Research Interests
+            </div>
+
+            <ul>
+
+              <li>
+                Diffusion MRI and tensor imaging
+              </li>
+
+              <li>
+                Medical image reconstruction and
+                quantitative analysis
+              </li>
+
+              <li>
+                Machine learning for biological
+                and medical imaging
+              </li>
+
+              <li>
+                Biomedical signal and image processing
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- SKILLS PAGE -->
+
+  <div id="skills" class="page">
+
+    <main class="content">
+
+      <h2 class="section-title">Technical Skills</h2>
+
+      <div class="section-block">
+
+        <div class="section-heading">
+          Programming Languages
+        </div>
+
+        <div class="pill-row">
+
+          <span class="pill">Python</span>
+          <span class="pill">C++</span>
+          <span class="pill">MATLAB</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="section-block">
+
+        <div class="section-heading">
+          Machine Learning
+        </div>
+
+        <div class="pill-row">
+
+          <span class="pill">PyTorch</span>
+          <span class="pill">TensorFlow</span>
+          <span class="pill">scikit-learn</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="section-block">
+
+        <div class="section-heading">
+          MRI and Image Processing
+        </div>
+
+        <div class="pill-row">
+
+          <span class="pill">FSL</span>
+          <span class="pill">FreeSurfer</span>
+          <span class="pill">DSI Studio</span>
+          <span class="pill">MRtrix3</span>
+
+        </div>
+
+      </div>
+
+
+      <div class="section-block">
+
+        <div class="section-heading">
+          Other Tools
+        </div>
+
+        <div class="pill-row">
+
+          <span class="pill">CST Studio Suite</span>
+          <span class="pill">Git</span>
+          <span class="pill">Linux</span>
+          <span class="pill">LaTeX</span>
+          <span class="pill">Google Colab</span>
+          <span class="pill">Jupyter Notebook</span>
+
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- TEACHING PAGE -->
+
+  <div id="teaching" class="page">
+
+    <main class="content">
+
+      <h2 class="section-title">Teaching Experience</h2>
+
+      <div class="section-block">
+
+        <div class="section-heading">
+          Graduate Teaching Assistant
+        </div>
+
+        <div class="muted">
+          Auburn University · 2024 – Present
+        </div>
+
+        <ul>
+
+          <li>
+            ELEC 3810 – Fundamentals of Electrical Circuits
+          </li>
+
+          <li>
+            ELEC 3800 – Random Signals and Systems
+          </li>
+
+        </ul>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- PROJECTS PAGE -->
+
+  <div id="projects" class="page">
+
+    <main class="content">
+
+      <h2 class="section-title">Projects</h2>
+
+
+      <div class="section-block">
+
+        <div class="section-heading">
+
+          AI for High-Accuracy Bacterial Detection,
+          Segmentation, and Classification
+
+        </div>
+
+        <div class="muted">
+
+          Models: YOLOv11, U-Net (ResNet34 encoder),
+          ResNet18
+
+        </div>
+
+        <p>
+
+          Built an end-to-end pipeline that detects
+          bacteria in microscopy images, segments their
+          shapes into instance-level masks, and classifies
+          morphology for automated quantitative analysis.
+
+        </p>
+
+      </div>
+
+
+      <div class="section-block">
+
+        <div class="section-heading">
+
+          Wearable Microstrip Patch Antenna
+          for Health Monitoring
+
+        </div>
+
+        <div class="muted">
+          Tool: CST Studio Suite
+        </div>
+
+        <p>
+
+          Designed and simulated a ground-slotted
+          rectangular microstrip patch antenna for
+          wearable devices at 3.5–3.8 GHz.
+
+          Compared flexible substrates such as
+          Polyethylene, RT Duroid, Teflon, and PDMS
+          to balance gain, return loss, and
+          mechanical flexibility.
+
+        </p>
+
+      </div>
+
+
+      <div class="section-block">
+
+        <div class="section-heading">
+
+          Data-Driven ADHD Diagnosis:
+          Comparative Analysis Using PSD and SVM
+
+        </div>
+
+        <div class="muted">
+          Model: Support Vector Machine (SVM)
+        </div>
+
+        <p>
+
+          Developed a power spectral density (PSD)-based
+          feature extraction pipeline on fMRI data
+          with SVM classification.
+
+          The analysis showed that carefully selected
+          compact feature sets can outperform large
+          feature spaces for ADHD versus control
+          discrimination.
+
+        </p>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- COURSEWORK PAGE -->
+
+  <div id="coursework" class="page">
+
+    <main class="content">
+
+      <h2 class="section-title">
+        Graduate Coursework
+      </h2>
+
+      <div class="section-block">
+
+        <ul>
+
+          <li>
+            ELEC 7450 – Digital Image Processing
+          </li>
+
+          <li>
+            ELEC 6410 – Digital Signal Processing
+          </li>
+
+          <li>
+            ELEC 6970 – Special Topics:
+            Applied Statistics and Machine Learning
+          </li>
+
+          <li>
+            ELEC 6310 – Design of Antennas
+            and Antenna Systems
+          </li>
+
+        </ul>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- CERTIFICATION PAGE -->
+
+  <div id="certification" class="page">
+
+    <main class="content">
+
+      <h2 class="section-title">
+        Certifications
+      </h2>
+
+
+      <div class="section-block">
+
+        <div class="section-heading">
+          HeartCode BLS (Basic Life Support)
+        </div>
+
+        <div class="muted">
+          American Heart Association
+        </div>
+
+        <div class="muted">
+          Issued February 2025
+        </div>
+
+      </div>
+
+
+      <div class="section-block">
+
+        <div class="section-heading">
+          MRI Level 2 Certification
+        </div>
+
+        <div class="muted">
+          Advanced MRI safety training for working
+          in the MRI environment.
+        </div>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- PUBLICATIONS PAGE -->
+
+  <div id="publications" class="page">
+
+    <main class="content">
+
+      <h2 class="section-title">
+        Publications
+      </h2>
+
+
+      <div class="pub">
+
+        <a
+          class="pub-title"
+          href="https://ieeexplore.ieee.org/document/9350867"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          A Comprehensive Comparison Between Boost
+          and Buck-Boost Converters in Solar MPPT
+          with ANN
+
+        </a>
+
+        <div class="muted">
+          Conference Paper · 2020 · IEEE
+        </div>
+
+        <p>
+
+          Explores ANN-based maximum power point
+          tracking using different DC-DC converter
+          topologies.
+
+        </p>
+
+      </div>
+
+
+      <div class="pub">
+
+        <a
+          class="pub-title"
+          href="https://ieeexplore.ieee.org/document/9019996"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+
+          Voice-activated Open-loop Control
+          of Wireless Home Automation System
+          for Multifunctional Devices
+
+        </a>
+
+        <div class="muted">
+          Conference Paper · 2019 · IEEE
+        </div>
+
+        <p>
+
+          Presents a voice-controlled wireless
+          home automation system for
+          multi-device control.
+
+        </p>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- CONTACT PAGE -->
+
+  <div id="contact" class="page">
+
+    <main class="content contact-section">
+
+      <h2 class="section-title">
+        Contact
+      </h2>
+
+      <p>
+
+        I am open to conversations about internships,
+        research collaborations, and interdisciplinary
+        projects in medical imaging and related areas.
+
+      </p>
+
+
+      <div class="contact-links">
+
+        <div class="contact-item">
+
+          <span>✉️</span>
+
+          <span>
+            tzt0079(at)auburn(dot)edu
+          </span>
+
+        </div>
+
+
+        <a
+          href="https://www.linkedin.com/in/tasnia-tahsin-415445141/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="contact-item linkedin-icon"
+          aria-label="LinkedIn profile"
+        >
+
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
+
+            <rect
+              x="2"
+              y="2"
+              width="20"
+              height="20"
+              rx="3"
+              fill="#0A66C2"
+            />
+
+            <path
+              d="M8.11 9.17H6.03V18h2.08V9.17zM7.07 5.5A1.2 1.2 0 1 0 7.08 7.9 1.2 1.2 0 0 0 7.07 5.5zM18 18h-2.07v-4.66c0-1.11-.4-1.86-1.4-1.86-.77 0-1.23.52-1.43 1.03-.07.17-.09.41-.09.65V18H11v-8.83h1.96v1.2c.26-.4.92-1.2 2.24-1.2 1.64 0 2.8 1.07 2.8 3.37V18z"
+              fill="#ffffff"
+            />
+
+          </svg>
+
+          <span>LinkedIn</span>
+
+        </a>
+
+      </div>
+
+    </main>
+
+  </div>
+
+
+  <!-- FOOTER -->
+
+  <footer>
+
+    © <span id="year"></span>
+    Tasnia Tahsin · Hosted on GitHub Pages
+
+  </footer>
+
+
+  <!-- JAVASCRIPT -->
+
+  <script>
+
+    // Display the selected page
+
+    function showPage(pageId) {
+
+      const pages = document.querySelectorAll(".page");
+
+      pages.forEach(page => {
+        page.classList.remove("active");
+      });
+
+      const selectedPage = document.getElementById(pageId);
+
+      if (!selectedPage || !selectedPage.classList.contains("page")) {
+        return;
+      }
+
+      selectedPage.classList.add("active");
+
+      // Update active navigation link
+
+      const navLinks = document.querySelectorAll(".nav-links a");
+
+      navLinks.forEach(link => {
+
+        link.classList.remove("active");
+
+        if (link.dataset.page === pageId) {
+          link.classList.add("active");
+        }
+
+      });
+
+      // Scroll to top
+
+      window.scrollTo({
+        top: 0,
+        behavior: "instant"
+      });
+
+    }
+
+
+    // Handle navigation and browser history
+
+    function handleHashChange() {
+
+      const pageId = window.location.hash.substring(1) || "home";
+
+      if (document.getElementById(pageId)) {
+        showPage(pageId);
+      } else {
+        showPage("home");
+      }
+
+    }
+
+
+    // Navigation links
+
+    document.querySelectorAll(".nav-links a").forEach(link => {
+
+      link.addEventListener("click", function(event) {
+
+        const pageId = this.dataset.page;
+
+        if (window.location.hash === "#" + pageId) {
+          event.preventDefault();
+          showPage(pageId);
+        }
+
+      });
+
+    });
+
+
+    // Initial page load
+
+    window.addEventListener("hashchange", handleHashChange);
+
+    handleHashChange();
+
+
+    // Dynamic footer year
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
+
+  </script>
+
+</body>
+</html>
